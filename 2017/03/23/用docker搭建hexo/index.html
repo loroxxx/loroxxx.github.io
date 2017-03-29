@@ -87,37 +87,34 @@
 
 
 
-<meta name="description" content="记录下在docker下如何安装hexo的完整操作流程
+<meta name="description" content="记录下在docker下如何安装hexo的完整操作流程安装重点：在容器内安装完服务之后，提交为镜像，起个好记得名字和tag，映射端口，挂载宿主机上的文件夹到容器上。可以实现宿主机上修改，容器发布服务。
+
 windows有docker的客户端，安装完之后运行，就可以在cmd中敲击命令了
 
 先确认下docker的版本：docker --versiondocker --version
 
-打开daocloud的镜像市场,找到node的镜像地址
-
-运行命令：拉取镜像:docker pull daocloud.io/library/node:latest">
+打开daoclou">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用docker搭建hexo">
 <meta property="og:url" content="http://yoursite.com/2017/03/23/用docker搭建hexo/index.html">
 <meta property="og:site_name" content="code">
-<meta property="og:description" content="记录下在docker下如何安装hexo的完整操作流程
+<meta property="og:description" content="记录下在docker下如何安装hexo的完整操作流程安装重点：在容器内安装完服务之后，提交为镜像，起个好记得名字和tag，映射端口，挂载宿主机上的文件夹到容器上。可以实现宿主机上修改，容器发布服务。
+
 windows有docker的客户端，安装完之后运行，就可以在cmd中敲击命令了
 
 先确认下docker的版本：docker --versiondocker --version
 
-打开daocloud的镜像市场,找到node的镜像地址
-
-运行命令：拉取镜像:docker pull daocloud.io/library/node:latest">
-<meta property="og:updated_time" content="2017-03-23T07:54:52.197Z">
+打开daoclou">
+<meta property="og:updated_time" content="2017-03-23T08:01:10.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用docker搭建hexo">
-<meta name="twitter:description" content="记录下在docker下如何安装hexo的完整操作流程
+<meta name="twitter:description" content="记录下在docker下如何安装hexo的完整操作流程安装重点：在容器内安装完服务之后，提交为镜像，起个好记得名字和tag，映射端口，挂载宿主机上的文件夹到容器上。可以实现宿主机上修改，容器发布服务。
+
 windows有docker的客户端，安装完之后运行，就可以在cmd中敲击命令了
 
 先确认下docker的版本：docker --versiondocker --version
 
-打开daocloud的镜像市场,找到node的镜像地址
-
-运行命令：拉取镜像:docker pull daocloud.io/library/node:latest">
+打开daoclou">
 
 
 
@@ -306,7 +303,7 @@ windows有docker的客户端，安装完之后运行，就可以在cmd中敲击�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T07:54:52+00:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T08:01:10+00:00">
                 2017-03-23
               </time>
             
@@ -342,7 +339,8 @@ windows有docker的客户端，安装完之后运行，就可以在cmd中敲击�
       
 
       
-        <h1 id="记录下在docker下如何安装hexo的完整操作流程"><a href="#记录下在docker下如何安装hexo的完整操作流程" class="headerlink" title="记录下在docker下如何安装hexo的完整操作流程"></a>记录下在docker下如何安装hexo的完整操作流程</h1><ol>
+        <h1 id="记录下在docker下如何安装hexo的完整操作流程"><a href="#记录下在docker下如何安装hexo的完整操作流程" class="headerlink" title="记录下在docker下如何安装hexo的完整操作流程"></a>记录下在docker下如何安装hexo的完整操作流程</h1><p>安装重点：在容器内安装完服务之后，提交为镜像，起个好记得名字和tag，映射端口，挂载宿主机上的文件夹到容器上。可以实现宿主机上修改，容器发布服务。</p>
+<ol>
 <li><p>windows有docker的客户端，安装完之后运行，就可以在cmd中敲击命令了</p>
 </li>
 <li><p>先确认下docker的版本：<code>docker --versiondocker --version</code></p>
@@ -376,15 +374,15 @@ windows有docker的客户端，安装完之后运行，就可以在cmd中敲击�
 <li><p>删除镜像：<code>docker rmi &lt;id&gt;</code></p>
 </li>
 </ol>
-<p>16.如何退出容器而不停止容器：Ctrl+P+Q</p>
-<p>17.进入一个已经运行的容器：<code>docker exec -it &lt;id&gt; /bin/bash</code></p>
-<p>18.给容器起一个新名字<code>docker rename old容器名  new容器名</code></p>
-<p>19.安装vim到docker容器上:<br><code>1.apt-get update，这个命令的作用是：同步 /etc/apt/sources.list 和 /etc/apt/sources.list.d 中列出的源的索引，这样才能获取到最新的软件包。  
+<p>15.如何退出容器而不停止容器：Ctrl+P+Q</p>
+<p>16.进入一个已经运行的容器：<code>docker exec -it &lt;id&gt; /bin/bash</code></p>
+<p>17.给容器起一个新名字<code>docker rename old容器名  new容器名</code></p>
+<p>18.安装vim到docker容器上:<br><code>1.apt-get update，这个命令的作用是：同步 /etc/apt/sources.list 和 /etc/apt/sources.list.d 中列出的源的索引，这样才能获取到最新的软件包。  
 2.等更新完毕以后再敲命令：apt-get install vim命令即可</code></p>
-<p>20.挂载主机的文件夹到容器上<code>docker run  -p 4000:4000 -v G:/hexo_home:/home  -it myhexo:v1</code></p>
-<p>21.从docker容器下复制文件到Win10/宿主机<code>docker cp container_id:/filepath  hostfilepath</code></p>
-<p>22.从Win10/宿主机下复制文件到docker容器<code>docker cp hostfilepath  container_id:/filepath</code></p>
-<p>23.修改tag：<code>docker tag entel_zmc_images  entel_zmc_images:zmc_base</code></p>
+<p>19.挂载主机的文件夹到容器上<code>docker run  -p 4000:4000 -v G:/hexo_home:/home  -it myhexo:v1</code></p>
+<p>20.从docker容器下复制文件到Win10/宿主机<code>docker cp container_id:/filepath  hostfilepath</code></p>
+<p>21.从Win10/宿主机下复制文件到docker容器<code>docker cp hostfilepath  container_id:/filepath</code></p>
+<p>22.修改tag：<code>docker tag entel_zmc_images  entel_zmc_images:zmc_base</code></p>
 
       
     </div>
@@ -430,6 +428,10 @@ windows有docker的客户端，安装完之后运行，就可以在cmd中敲击�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/29/项目常见漏洞/" rel="prev" title="项目常见漏洞及防护">
+                项目常见漏洞及防护 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -501,7 +503,7 @@ windows有docker的客户端，安装完之后运行，就可以在cmd中敲击�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

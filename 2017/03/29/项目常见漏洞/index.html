@@ -87,12 +87,28 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="code">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取;重要信息存session；对权限要有限制;对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法
+总结一些在web开发中常见的安全漏洞和解决方法在银行开发的时候，每次项目在上线的时候都会进行一次安全检查，会扫描出不少的安全漏洞。在此做些整理，方便以后用得上.
+1.脚本攻击
+
+xxs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目常见漏洞及防护">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/项目常见漏洞/index.html">
 <meta property="og:site_name" content="code">
+<meta property="og:description" content="原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取;重要信息存session；对权限要有限制;对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法
+总结一些在web开发中常见的安全漏洞和解决方法在银行开发的时候，每次项目在上线的时候都会进行一次安全检查，会扫描出不少的安全漏洞。在此做些整理，方便以后用得上.
+1.脚本攻击
+
+xxs">
+<meta property="og:updated_time" content="2017-03-29T04:23:11.880Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="code">
+<meta name="twitter:title" content="项目常见漏洞及防护">
+<meta name="twitter:description" content="原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取;重要信息存session；对权限要有限制;对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法
+总结一些在web开发中常见的安全漏洞和解决方法在银行开发的时候，每次项目在上线的时候都会进行一次安全检查，会扫描出不少的安全漏洞。在此做些整理，方便以后用得上.
+1.脚本攻击
+
+xxs">
 
 
 
@@ -120,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/29/项目常见漏洞/"/>
 
 
 
 
 
-  <title> code </title>
+  <title> 项目常见漏洞及防护 | code </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -151,9 +167,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-   page-home 
- ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,154 +250,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/日志框架如何选用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luo Yuanq">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="code">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/29/日志框架如何选用/" itemprop="url">
-                  日志框架如何选用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T04:27:43+00:00">
-                2017-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="日志框架"><a href="#日志框架" class="headerlink" title="日志框架"></a>日志框架</h5><p>日志框架对项目相当的重要，特别在维护项目时，出了问题，就要从日志中找到bug，<br>我们需要把运行时的情况按照重要级别显示，排列，日志备份，方便查错。<br>目前常见的java日志组件有以下几种，有一些可以独立使用，而有些是要配合使用。本篇文章就是打算理清一下它们之间的关系。</p>
-<ul>
-<li>java原生日志框架 java.util.logging.Logger</li>
-<li>apache的通用日志框架 commons-logging</li>
-<li>log4j<br>-logback</li>
-<li>slf4j</li>
-</ul>
-<p>要理清它们的用法，最好是了解这些框架的产生的背景，每个新事物出现都是为了解决某个问题。了解后，我们可以对每一种框架的特性和使用范围有更深的理解。</p>
-<p>我们在项目中为了调试程序和查看程序运行情况时，最常用的就是在控制台打印出信息，可是当一个项目变得越来越庞大，打印出来的消息也越来越复杂，很难查看，我们会希望能将这种情况改善，比如这些信息能有一定的格式，能方便的打印出自定义的信息<br>，能根据重要性来显示信息，调试的时候能看到详细的信息，而在维护期间只打印简单的信息。</p>
-<p>那时候就出现了java.util.logging.Logger，log4j，logback这些框架，这些都是为了解决我们刚刚所说的那些问题所出来的解决方案，我们可以任选一种就可以，再简单说下这几种的优劣：</p>
-<ul>
-<li>java.util.logging.Logger是java原生框架，不用引入额外的第三方jar，功能简单，性能一般，在小项目时就可以直接用这个。</li>
-<li>log4j，一般在开发中，都是使用这个，功能强大，性能好，</li>
-<li>logback和log4j一样。</li>
-</ul>
-<p>这种情况持续了一段时间，我们都知道java项目经常要引用一些第三方的项目和jar来支持开发，人们发现了有些jar包用的日志框架都不同，你用logback，我用log4j，<br>而这种日志框架每一种都有自己的用法和写法，有时候会打印出两份日志，有时候会打印不出日志。这种情况怎么办？<br>解决方法就是对这些日志加入一层抽象，所有项目，我们统一使用commons-logging的日志写法，再由commons-logging调用log4j或者logback来打印日志</p>
-<p>简单说，以前我们的项目如果想使用log4j.jar，都是引入log4j.jar，使用log4j的日志写法，然后打印日志。现在变成了我们只引入commons-logging.jar，使用commons-logging.jar的日志写法，之后，再引入log4j.jar，加上配置，用log4j.jar来打印日志。如果某天，我想用logback来打印日志，我代码也不用改，只需要改动commons-logging配置就好。</p>
-<p>所以，这时候，我们一般都是commons-logging.jar+log4j.jar来配合使用。</p>
-<p>这种解决方案已经很好了,可是啊,人们发现commons-logging 有个问题，commons-logging是动态加载的，简单说，它是在程序运行时通过classloader来加载具体的日志执行类<br>，这在一般程序是没什么问题的，可是对于那些自定义classloader的框架来说，比如说osgi来说，会获取不到日志执行类。那怎么办？<br>解决方法是slf4j，它是静态加载的，可以在生成class文件时，就绑定了具体的日志执行类。</p>
-<p>所以，现在的日志通用配置都采用了这种：slf4j.jar+slf4j-log4j12.jar+log4j.jar<br>我们日志的写法写成slf4j.jar的形式，然后配合slf4j-log4j12.jar+log4j.jar来使用log4j.jar生成日志</p>
-<p>而且，为了兼容以前commons-logging.jar的写法，还提供了jcl-over-slf4j-1.7.12.jar，如果你的项目是commons-logging.jar的写法，希望以后转为slf4j.jar，就映入这个<br>jcl-over-slf4j-1.7.12.jar，把原有的commons-logging.jar移除即可。</p>
-<p>所以，现在简单归纳一下：<br>java.util.logging.Logger，log4j，logback可以单独使用，但跟别的软件可能不兼容性，不推荐<br>commons-logging+log4j或者logback，commons-logging+一般配合log4j或者logback使用，可以方便切换不同的日志实现，也有利于和别的使用commons-logging的软件兼容，一般推荐<br>slf4j.jar+slf4j-log4j12.jar(起到转换作用)+log4j.jar，这种最推荐，因为已经是开源软件的通用写法了</p>
-<p>提供一份日志配置：</p>
-<p>主要是格式，和日志备份的配置,：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
 
   
 
@@ -413,10 +282,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/29/项目常见漏洞/" itemprop="url">
-                  项目常见漏洞及防护
-                </a>
+                项目常见漏洞及防护
               
             
           </h1>
@@ -467,9 +333,7 @@
       
 
       
-        
-          
-            <h5 id="原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取-重要信息存session；对权限要有限制-对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法"><a href="#原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取-重要信息存session；对权限要有限制-对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法" class="headerlink" title="原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取;重要信息存session；对权限要有限制;对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法"></a>原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取;重要信息存session；对权限要有限制;对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法</h5><hr>
+        <h5 id="原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取-重要信息存session；对权限要有限制-对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法"><a href="#原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取-重要信息存session；对权限要有限制-对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法" class="headerlink" title="原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取;重要信息存session；对权限要有限制;对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法"></a>原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取;重要信息存session；对权限要有限制;对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法</h5><hr>
 <p>总结一些在web开发中常见的安全漏洞和解决方法<br>在银行开发的时候，每次项目在上线的时候都会进行一次安全检查，会扫描出不少的安全漏洞。<br>在此做些整理，方便以后用得上.</p>
 <p>1.脚本攻击</p>
 <ul>
@@ -547,20 +411,27 @@
 <p>加强开发能力和测试案例。</p>
 <p>**</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -568,314 +439,42 @@
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/用docker搭建hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luo Yuanq">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="code">
-    </span>
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/23/用docker搭建hexo/" rel="next" title="用docker搭建hexo">
+                <i class="fa fa-chevron-left"></i> 用docker搭建hexo
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/03/23/用docker搭建hexo/" itemprop="url">
-                  用docker搭建hexo
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+              <a href="/2017/03/29/日志框架如何选用/" rel="prev" title="日志框架如何选用">
+                日志框架如何选用 <i class="fa fa-chevron-right"></i>
+              </a>
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T08:01:10+00:00">
-                2017-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="记录下在docker下如何安装hexo的完整操作流程"><a href="#记录下在docker下如何安装hexo的完整操作流程" class="headerlink" title="记录下在docker下如何安装hexo的完整操作流程"></a>记录下在docker下如何安装hexo的完整操作流程</h1><p>安装重点：在容器内安装完服务之后，提交为镜像，起个好记得名字和tag，映射端口，挂载宿主机上的文件夹到容器上。可以实现宿主机上修改，容器发布服务。</p>
-<ol>
-<li><p>windows有docker的客户端，安装完之后运行，就可以在cmd中敲击命令了</p>
-</li>
-<li><p>先确认下docker的版本：<code>docker --versiondocker --version</code></p>
-</li>
-<li><p>打开daocloud的镜像市场,找到node的镜像地址</p>
-</li>
-<li><p>运行命令：拉取镜像:<code>docker pull daocloud.io/library/node:latest</code></p>
-</li>
-<li><p>下载完毕后，查看docker的镜像：<code>docker images</code></p>
-</li>
-<li><p>用这个镜像运行一个容器，并实现交互，指定开放端口，执行bash：<code>docker run -t -i -p 4000:4000  daocloud.io/library/node /bin/bash</code></p>
-</li>
-<li><p>进入之后,把npm设置为国内的仓库，运行：<code>npm config set registry &quot;https://registry.npm.taobao.org&quot;</code></p>
-</li>
-<li><p>根据hexo官网来安装hexo：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></p>
-</li>
-<li><p>使用next主题：<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">http://theme-next.iissnan.com/getting-started.html</a></p>
-</li>
-<li><p>在宿主机访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
-</li>
-<li><p>ctrl+D可以退出容器</p>
-</li>
-<li><p>查看容器状态：<code>docker ps -a</code></p>
-</li>
-<li><p>重新启动容器：<code>docker start -a -i &lt;name&gt;</code></p>
-</li>
-<li><p>可以把容器提交为镜像<code>docker commit &lt;id&gt;:&lt;tag&gt;</code></p>
-</li>
-<li><p>在删除镜像时要先删除相关容器，删除容器：<code>docker rm &lt;id&gt;</code></p>
-</li>
-<li><p>删除镜像：<code>docker rmi &lt;id&gt;</code></p>
-</li>
-</ol>
-<p>15.如何退出容器而不停止容器：Ctrl+P+Q</p>
-<p>16.进入一个已经运行的容器：<code>docker exec -it &lt;id&gt; /bin/bash</code></p>
-<p>17.给容器起一个新名字<code>docker rename old容器名  new容器名</code></p>
-<p>18.安装vim到docker容器上:<br><code>1.apt-get update，这个命令的作用是：同步 /etc/apt/sources.list 和 /etc/apt/sources.list.d 中列出的源的索引，这样才能获取到最新的软件包。  
-2.等更新完毕以后再敲命令：apt-get install vim命令即可</code></p>
-<p>19.挂载主机的文件夹到容器上<code>docker run  -p 4000:4000 -v G:/hexo_home:/home  -it myhexo:v1</code></p>
-<p>20.从docker容器下复制文件到Win10/宿主机<code>docker cp container_id:/filepath  hostfilepath</code></p>
-<p>21.从Win10/宿主机下复制文件到docker容器<code>docker cp hostfilepath  container_id:/filepath</code></p>
-<p>22.修改tag：<code>docker tag entel_zmc_images  entel_zmc_images:zmc_base</code></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luo Yuanq">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="code">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/23/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T04:13:42+00:00">
-                2017-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -883,6 +482,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -902,8 +505,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -947,6 +559,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取-重要信息存session；对权限要有限制-对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法"><span class="nav-number">1.</span> <span class="nav-text">原则：不要相信前端，要在后端确保安全，能在后端取到的数据就从后端取;重要信息存session；对权限要有限制;对于有确认页的内容，如果对安全性有要求，那么在提交阶段，一定要对数据再校验，防止篡改，可以采用模板方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1052,6 +680,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
